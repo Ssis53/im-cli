@@ -8,7 +8,8 @@ const importLocal = require("import-local");
 const log = require("npmlog");
 
 if(importLocal(__dirname)) {
-  log.info("core/index.js", "有Local的")
+  log.info("core/bin/index.js", "用本地的")
 } else {
+  log.info("core/bin/index.js", "用全局的")
   require("../lib/core")(process.argv.slice(2));
 }
